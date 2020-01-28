@@ -8,43 +8,15 @@
 
     <?php get_header();?>
 
-    <?php get_template_part('/page-templates/common/banner')?>
+   
+   
+    <?php 
+$jurist_section_id=23;
+get_template_part("section-templates/banner");
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt services-section">
-      <div class="container-fluid px-md-5 py-3">
-        <div class="row py-4 d-flex">
-          <div class="col-md-3 services align-self-stretch ftco-animate">
-            <div class="media-body">
-            	<span class="num">01</span>
-              <h3 class="heading mb-3"><a href="#">Get Your Legal Advice</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries</p>
-            </div>
-          </div>
-          <div class="col-md-3 services align-self-stretch ftco-animate">
-            <div class="media-body">
-            	<span class="num">02</span>
-              <h3 class="heading mb-3"><a href="#">Work with Expert Lawyers</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries</p>
-            </div>
-          </div>
-          <div class="col-md-3 services align-self-stretch ftco-animate">
-            <div class="media-body">
-            	<span class="num">03</span>
-              <h3 class="heading mb-3"><a href="#">Have Great Discounted Rates</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries</p>
-            </div>
-          </div>
-          <div class="col-md-3 services align-self-stretch ftco-animate">
-            <div class="media-body">
-            	<span class="num">04</span>
-              <h3 class="heading mb-3"><a href="#">Review Your Case Documents</a></h3>
-              <p>Far far away, behind the word mountains, far from the countries</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-   	
+?>
+
+    
     <section class="ftco-section ftco-no-pt ftco-no-pb">
     	<div class="container">
     		<div class="row d-flex">
@@ -565,23 +537,10 @@
         </div>
     	</div>
     </section>
+<?php 
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb bg-primary">
-      <div class="container py-4">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-7 ftco-animate d-flex align-items-center">
-            <h2 class="mb-0" style="color:white; font-size: 28px;">Subcribe to our Newsletter</h2>
-          </div>
-          <div class="col-md-5 d-flex align-items-center">
-            <form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control" placeholder="Enter email address">
-                <input type="submit" value="Subscribe" class="submit px-3">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    get_template_part("/page-templates/common/email");
+    ?>
+
 <?php get_footer();?>
     

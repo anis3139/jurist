@@ -23,7 +23,7 @@ function jurist_banner_section_metabox($metaboxes){
         'priority'  => 'default',
         'sections'  => array(
             array(
-                'id'     => 'jurist-banner_section_one',
+               
                 'name'  => '',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
@@ -36,39 +36,44 @@ function jurist_banner_section_metabox($metaboxes){
                     array(
                         'id'              => 'services',
                         'type'            => 'group',
-                        'title'           => __( 'services_heading', 'saneem' ),
-                        'button_title'    => __( 'New services Heading', 'saneem' ),
-                        'accordion_title' => __( 'Add New services Heading', 'saneem' ),
+                        'title'           => __( 'services_heading', 'jurist' ),
+                        'button_title'    => __( 'services Heading', 'jurist' ),
+                        'accordion_title' => __( 'Add New services Heading', 'jurist' ),
                         'fields'          => array(
                           
                         array(
                         'id'    => 'services_number',
-                        'title'   => __( 'Queue Number', 'saneem' ),
-                        'type'    => 'text',
+                        'title'   => __( 'Queue Number', 'jurist' ),
+                        'type'    => 'select',
+                        'options' => array(
+                            '01' => __('One', 'jurist'),
+                             '02' => __('Two', 'jurist'),
+                             '03' => __('Three', 'jurist'),
+                             '04' => __('Four', 'jurist'),
+                                                   
+                        )
                         
                         ),                            
                         array(
                         'id'    => 'services_heading_title',
-                        'title'   => __( 'Heading Title', 'saneem' ),
+                        'title'   => __( 'Heading Title', 'jurist' ),
                         'type'    => 'text',
                         
                         ),                            
                         array(
                         'id'    => 'services_heading_subtitle',
-                        'title'   => __( 'Heading Sub Title', 'saneem' ),
-                        'type'    => 'text',
+                        'title'   => __( 'Heading Sub Title', 'jurist' ),
+                        'type'    => 'textarea',
                         
                         ),
                    
                     ),
-                )
+                ),
             ),
         ),
     ),
        
     );
-    
-    
     
     
     

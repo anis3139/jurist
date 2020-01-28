@@ -1,16 +1,21 @@
 <?php 
+
+require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
+require_once( get_theme_file_path("/inc/tgm.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-banner.php" ) );
-
+require_once( get_theme_file_path( "/inc/metaboxes/page-about.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-prectice.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-case.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-attorneys.php" ) );
 define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
 define( 'CS_ACTIVE_METABOX', true ); // default true
 define( 'CS_ACTIVE_TAXONOMY', false ); // default true
 define( 'CS_ACTIVE_SHORTCODE', false ); // default true
 define( 'CS_ACTIVE_CUSTOMIZE', false ); // default true
-
 if ( ! file_exists( get_template_directory() . '/assets/nav-walker/class-wp-bootstrap-navwalker.php' ) ) {
     return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
 } else {
@@ -164,17 +169,24 @@ function jurist_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'jurist_widgets_init' );
-
 function jurist_csf_init(){
     CSFramework_metabox::instance(array());
 }
 add_action('init', 'jurist_csf_init');
+function jurist_about_page_template_banner() {
+    if ( is_page() ) {
+        if ( current_theme_supports( "custom-header" ) ) {
+            ?>
+<style>
+    .hero-wrap {
+        background-image: url(<?php echo header_image();
+        ?>);
+        background-size: cover;
+    }
 
-
-/*function jurist_menu_classes($classes, $item, $args) {
-  if($args->theme_location == 'primary') {
-    $classes[] = 'nav-item';
-  }
-  return $classes;
+</style>
+<?php
+        }
+    }
 }
-add_filter('nav_menu_css_class', 'jurist_menu_classes', 1, 3);*/
+add_action( "wp_head", "jurist_about_page_template_banner", 11 );
