@@ -3,6 +3,7 @@
 require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
 require_once( get_theme_file_path("/inc/tgm.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
+require_once( get_theme_file_path( "/widgets/social-icons-widget.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section.php" ) );
@@ -118,53 +119,53 @@ function jurist_widgets_init() {
 		'name'          => esc_html__( 'Blog Sidebar', 'jurist' ),
 		'id'            => 'sidebar-blog',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="p-2 widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_widget' => '<div id="%1$s" class="p-2 text-light widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title text-light">',
 		'after_title'   => '</h3>',
 	) );
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar one', 'jurist' ),
 		'id'            => 'footer-sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="pl-2 widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
+		'before_widget' => '<div id="%1$s" class="pl-2 text-light widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-heading mb-4 text-light widget-title">',
 		'after_title'   => '</h3>',
 	) );
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar Two', 'jurist' ),
 		'id'            => 'footer-sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="list-unstyled pl-2 widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
+		'before_widget' => '<div id="%1$s" class="list-unstyled pl-2 text-light widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-heading mb-4 text-light widget-title">',
 		'after_title'   => '</h3>',
 	) );
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar three', 'jurist' ),
 		'id'            => 'footer-sidebar-3',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="pl-2 widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
+		'before_widget' => '<div id="%1$s" class="pl-2 text-light widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-heading mb-4 widget-title text-light">',
 		'after_title'   => '</h3>',
 	) );
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar four', 'jurist' ),
 		'id'            => 'footer-sidebar-4',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="pl-2 widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
+		'before_widget' => '<div id="%1$s" class="pl-2 text-light widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="footer-heading mb-4 text-light widget-title">',
 		'after_title'   => '</h3>',
 	) );   
     ;register_sidebar( array(
 		'name'          => esc_html__( 'Google Map', 'jurist' ),
 		'id'            => 'google-map',
 		'description'   => esc_html__( 'Add widgets here.', 'jurist' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title mb-5">',
 		'after_title'   => '</h3>',
 	) );

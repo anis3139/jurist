@@ -1,83 +1,80 @@
-<footer class="ftco-footer ftco-bg-dark ftco-section">
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Judge</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Practice Areas</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Family Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Business Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Insurance Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Criminal Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Drug Offenses</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Fire Accident</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Employment Law</a></li>
-                <li><a href="#" class="py-1 d-block"><span class="ion-ios-arrow-forward mr-3"></span>Property Law</a></li>
-
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Business Hours</h2>
-              <div class="opening-hours">
-              	<h4>Opening Days:</h4>
-              	<p class="pl-3">
-              		<span>Monday – Friday : 9am to 20 pm</span>
-              		<span>Saturday : 9am to 17 pm</span>
-              	</p>
-              	<h4>Vacations:</h4>
-              	<p class="pl-3">
-              		<span>All Sunday Days</span>
-              		<span>All Official Holidays</span>
-              	</p>
+          <div class="row mb-5">
+              <div class="col-md">
+                  <div class="ftco-footer-widget mb-4">
+                      <?php 
+                         if ( is_active_sidebar( "footer-sidebar-1" ) ) {
+                        dynamic_sidebar( "footer-sidebar-1" );
+                    }
+                    ?>
+                      <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                          <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                          <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                          <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                      </ul>
+                  </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
+              <div class="col-md">
+                  <div class="ftco-footer-widget mb-4 ml-md-5">
+                      <?php 
+                         if ( is_active_sidebar( "footer-sidebar-2" ) ) {
+                        dynamic_sidebar( "footer-sidebar-2" );
+                    }
+                    ?>
+                  </div>
+              </div>
+              <div class="col-md">
+                  <div class="ftco-footer-widget mb-4">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                      <div class="opening-hours">
+                          <?php 
+                         if ( is_active_sidebar( "footer-sidebar-3" ) ) {
+                        dynamic_sidebar( "footer-sidebar-3" );
+                    }
+                    ?>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md text-light ">
+                  <div class="ftco-footer-widget mb-4 text-light">
+                     
+                      <div class="block-23 mb-3 text-light">
+                          <?php 
+                         if ( is_active_sidebar( "footer-sidebar-4" ) ) {
+                        dynamic_sidebar( "footer-sidebar-4" );
+                    }
+                    ?>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
+          <div class="row">
+              <div class="col-md-12 row text-center">
+                  <div class="col-md-8">
+                      <?php echo _e('Copyright ©2020 All rights reserved | This template is made with by  ', 'saneem') ?><a href="www.rainyforest.xyz"><?php _e('Anis Arronno','saneem'); ?></a>
+                  </div>
+                  <div class="col-md-4">
+                      <?php _e('Powered by','saneem');?> <a href="www.saneemit.com"><?php _e('Rainy Forest','saneem') ;?></a>
+                  </div>
+              </div>
+          </div>
       </div>
-    </footer>
-    
-  
+  </footer>
+
+
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-   
- 
-  
-  
-<?php wp_footer();?>
-    
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+
+
+
+  <?php wp_footer();?>
+
   </body>
-</html>
+
+  </html>
