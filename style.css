@@ -191,7 +191,10 @@ th {
     font-size: 40px;
     font-weight: bold;
 }
-
+.search{
+    
+    
+}
 -------------------------------
 /*contact form section custom css */
 -----------------------------------
@@ -268,9 +271,153 @@ th {
     font-size: 25px;
 }
 
+--------------------------------
+/* comments section custom css */
+------------------------------------
+
+/*coment form*/
+.comment-form-wrap {
+    background: #F8F9FA;
+}
+
+.comment-form-wrap > h3 {
+    padding-left: 10px;
+}
+
+.comment-reply-title {
+    padding-left: 10px;
+}
+
+.comment-form-comment textarea {
+    overflow: auto;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.comment-form p {
+    padding: 3%;
+}
+
+.comment-form-author > input {
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.comment-form-author > level {
+    font-size: 20px;
+}
+
+.comment-form-email > input {
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.comment-notes #email-notes {
+    padding-left: 10px;
+}
+
+.comment-form-url > input {
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.form-submit .submit {
+    background: #83B582;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/*Comment list*/
+@media only screen and (max-width:620px) {
+
+    /* For mobile phones: */
+    .comment-list li .comment-body .reply {
+        background: #E3E3E3;
+        color: #000;
+        text-transform: uppercase;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width:620px) {
+    .comment-list li .comment-body .reply{
+    padding: 5px 10px;
+    background: #E3E3E3;
+    color: #000;
+    text-transform: uppercase;
+    margin: 0px 0px 0px 80%;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;}
+}
+
+.comment-list li .comment-body .reply a {
+    color: black;
+}
+
+.comment-content {
+    text-align: left;
+    color: black;
+     margin-right: 20px;
+    padding: 20px;
+}
+
+.comment-author {
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.comment-metadata {
+     margin-right: 20px;
+    padding: 20px;
+}
 
 
+-------------------
+/*search form*/
+-----------------------
+.pagination {
+    border-top: 3px solid #E7EAED;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
 
+.single-page {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.margin-top {
+    margin-top: 100px;
+}
+
+.search-highlight {
+    background-color: #ff0;
+    font-weight: bold;
+}
+.header__search-form .hide-content{
+    position: absolute;
+    left:-9999px;
+} 
+
+.h-entry>p{
+    text-align: justify;
+}
+
+/*------------------------*/
 
 
 

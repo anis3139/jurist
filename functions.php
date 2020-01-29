@@ -11,6 +11,7 @@ require_once( get_theme_file_path( "/inc/metaboxes/page-about.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-prectice.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-case.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-attorneys.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-contact.php" ) );
 define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
 define( 'CS_ACTIVE_METABOX', true ); // default true
 define( 'CS_ACTIVE_TAXONOMY', false ); // default true
@@ -190,3 +191,26 @@ function jurist_about_page_template_banner() {
     }
 }
 add_action( "wp_head", "jurist_about_page_template_banner", 11 );
+
+
+function saneem_search_form( $form ) {
+    $homedir      = home_url( "/" );
+    $label        = __( "Search for:", "saneem" );
+    $button_label = __( "Search", "saneem" );
+    $newform = <<<FORM
+<form role="search" method="get" class="header__search-form" action="{$homedir}">
+    <label>
+        <span class="hide-content">{$label}</span>
+        <input type="search" class="form-control" placeholder="Type Keywords" value="" name="s"
+               title="{$label}" autocomplete="off">
+    </label>
+    {$post_type}
+    <input type="submit" class="btn btn-primary btn-sm" value="{$button_label}">
+</form>
+FORM;
+
+    return $newform;
+}
+
+
+add_filter( "get_search_form", "saneem_search_form" );
