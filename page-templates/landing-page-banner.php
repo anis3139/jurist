@@ -1,16 +1,14 @@
+ 
 <?php 
-global $jurist_section_id;
-$jurist_section_meta= get_post_meta($jurist_section_id,'jurist_banner_sections',true);
-$jurist_banner_image= get_template_directory_uri().'/assets/images/bg_1.jpg';
-if(isset($jurist_section_meta['banner_image'])){
-$jurist_banner_image= wp_get_attachment_image_src($jurist_section_meta['banner_image'],'full');
-}
-
-
-$jurist_section= get_post($jurist_section_id);
+$jurist_page_meta= get_post_meta(get_the_ID(),'jurist-page-sections',true);
+$jurist_section= get_post($page_id);
 $jurist_section_title= $jurist_section->post_title;
 $jurist_section_description= $jurist_section->post_content;
 
+$jurist_banner_image= get_template_directory_uri().'/assets/images/bg_1.jpg';
+if(isset($jurist_page_meta['banner_image'])){
+$jurist_banner_image= wp_get_attachment_image_src($jurist_page_meta['banner_image'],'full');
+}
 ?>
 
 <div class="hero-wrap js-fullheight" style="background-image: url(<?php echo esc_url( $jurist_banner_image[0]);?>);" data-stellar-background-ratio="0.5">
@@ -27,7 +25,7 @@ $jurist_section_description= $jurist_section->post_content;
 
 <?php 
 
-$service_headings=$jurist_section_meta['services'];
+$service_headings=$jurist_page_meta['services'];
 if($service_headings):
 ?>
 <section class="ftco-section ftco-no-pb ftco-no-pt services-section">

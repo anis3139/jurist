@@ -1,15 +1,15 @@
 <?php 
 
-function saneem_register_my_cpts_section() {
+function jurist_register_my_cpts_section() {
 
 
 	$labels = [
-		"name" => __( "sections", "saneem" ),
-		"singular_name" => __( "section", "saneem" ),
+		"name" => __( "Practice Areas", "jurist" ),
+		"singular_name" => __( "Practice Area", "jurist" ),
 	];
 
 	$args = [
-		"label" => __( "sections", "saneem" ),
+		"label" => __( "Practice Area", "jurist" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => false,
@@ -19,7 +19,7 @@ function saneem_register_my_cpts_section() {
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,
@@ -27,14 +27,14 @@ function saneem_register_my_cpts_section() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "section", "with_front" => true ],
+		"rewrite" => [ "slug" => "practice-area", "with_front" => true ],
 		"query_var" => true,
-		"menu_position" => 5,
+		"menu_position" => 20,
 		"menu_icon" => "dashicons-book-alt",
 		"supports" => [ "title", "editor", "thumbnail","excerpt" ],
         "taxonomies"=>array('category'),
 	];
 
-	register_post_type( "section", $args );
+	register_post_type( "practice_area", $args );
 }
-add_action( 'init', 'saneem_register_my_cpts_section' );
+add_action( 'init', 'jurist_register_my_cpts_section' );
