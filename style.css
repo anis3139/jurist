@@ -195,9 +195,9 @@ th {
     
     
 }
--------------------------------
-/*contact form section custom css */
------------------------------------
+/*-------------------------------
+contact form section custom css 
+-----------------------------------*/
 .wpcf7-submit{
     width: 25%;
     height: 30px;
@@ -252,9 +252,9 @@ th {
     color:black;
     font-size: 18px;
 }
---------------------------------------
-/*contact form section custom css  end */
-----------------------------------------
+/*--------------------------------------
+contact form section custom css  end 
+----------------------------------------*/
 
 .sheading{
     font-size: 40px;
@@ -270,10 +270,10 @@ th {
 .heading-section>.subheading{
     font-size: 25px;
 }
-
+/*
 --------------------------------
-/* comments section custom css */
-------------------------------------
+ comments section custom css 
+------------------------------------*/
 
 /*coment form*/
 .comment-form-wrap {
@@ -367,6 +367,9 @@ th {
 .comment-list li .comment-body .reply a {
     color: black;
 }
+.comment-list li .comment-body .reply:hover {
+    background: #c2c2c2;
+}
 
 .comment-content {
     text-align: left;
@@ -386,9 +389,9 @@ th {
 }
 
 
--------------------
-/*search form*/
------------------------
+/*-------------------
+search form
+-----------------------*/
 .pagination {
     border-top: 3px solid #E7EAED;
     padding-top: 30px;
@@ -418,7 +421,24 @@ th {
 }
 
 /*------------------------*/
+/*bradcumbs*/
+/*---------------------------*/
 
-
-
+.breadcrumb{
+    background-color: transparent;
+    color:#f1f1f1;
+    text-align:center;
+    margin-left: 35%;
+}
+.breadcrumb a{
+  
+    color:#fff;
+    text-align:center;
+}
+.breadcrumb li{
+padding: 10px;
+}
+.breadcrumb li:not(:last-child):after{
+  content: ' \003E';
+}
 

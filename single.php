@@ -50,7 +50,7 @@
                 </div>
 
 
-                <div class="pt-5 mt-5">
+                <div class="mt-5">
 
                     <div class="related-post pt-5">
                         <?php if ( function_exists( "the_field" ) ) : ?>

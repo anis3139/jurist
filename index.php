@@ -45,7 +45,7 @@ if(!is_active_sidebar("sidebar-blog")){
                                 </a>
                                 <h2 class="font-size-regular"><a href="<?php the_permalink(); ?>"><?php echo the_title();?></a></h2>
                                 <div class="meta mb-4"><em><?php echo the_author_posts_link();?></em><span class="mx-2">&bullet;</span> <a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a><span class="mx-2">&bullet;</span> <a href="#"><?php echo get_the_tag_list("<span>",",&nbsp","</span>");?></a></div>
-                                <p><?php the_excerpt();?></p>
+                                <p><?php echo wp_trim_words(get_the_content(),30);?></p>
                                 <p><a href="<?php the_permalink();?>"><?php _e('Continue Reading...','jurist');?></a></p>
                      </div>
                  </div>
