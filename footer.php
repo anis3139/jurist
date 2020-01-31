@@ -53,10 +53,10 @@
           <div class="row">
               <div class="col-md-12 row text-center">
                   <div class="col-md-8">
-                      <?php echo _e('Copyright ©2020 All rights reserved | This template is made with by  ', 'saneem') ?><a href="www.rainyforest.xyz"><?php _e('Anis Arronno','saneem'); ?></a>
+                      <?php echo _e('Copyright ©2020 All rights reserved | This template is made with by  ', 'jurist') ?><a href="http://www.rainyforest.xyz"><?php _e('Anis Arronno','jurist'); ?></a>
                   </div>
                   <div class="col-md-4">
-                      <?php _e('Powered by','saneem');?> <a href="www.saneemit.com"><?php _e('Rainy Forest','saneem') ;?></a>
+                      <?php _e('Powered by','jurist');?> <a href="http://www.rainyforest.xyz"><?php _e('Rainy Forest','jurist') ;?></a>
                   </div>
               </div>
           </div>

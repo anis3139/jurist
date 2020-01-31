@@ -28,7 +28,7 @@ $jurist_banner_image= wp_get_attachment_image_src($jurist_page_meta['banner_imag
 $service_headings=$jurist_page_meta['services'];
 if($service_headings):
 ?>
-<section class="ftco-section ftco-no-pb ftco-no-pt services-section">
+<section class="ftco-section ftco-no-pb ftco-no-pt services-section ripples">
     <div class="container-fluid px-md-5 py-3">
         <div class="row py-4 d-flex">
            <?php 

@@ -1,5 +1,4 @@
 <?php 
-
 require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
 require_once( get_theme_file_path("/inc/tgm.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
@@ -101,6 +100,39 @@ function jurist_assets(){
     wp_enqueue_script('scrollax-js',get_theme_file_uri('/assets/js/scrollax.min.js'),['jquery'],time(),true);   
     wp_enqueue_script('google-map-js',get_theme_file_uri('/assets/js/google-map.js'),['jquery'],time(),true);  
     wp_enqueue_script('googleapis-js',get_theme_file_uri('//maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'),['jquery'],time(),true);    
+    		wp_enqueue_style('mailchimp-css','//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
+		$style = <<<EOD
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+}
+EOD;
+		wp_add_inline_style('mailchimp-css',$style);
+
+		wp_enqueue_script('mailchimp-js','//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js',array('jquery'),'1.0',true);
+		$script = <<<EOD
+(function ($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0] = 'EMAIL';
+    ftypes[0] = 'email';
+    fnames[1] = 'FNAME';
+    ftypes[1] = 'text';
+    fnames[2] = 'LNAME';
+    ftypes[2] = 'text';
+    fnames[3] = 'ADDRESS';
+    ftypes[3] = 'address';
+    fnames[4] = 'PHONE';
+    ftypes[4] = 'phone';
+}(jQuery));
+var \$mcj = jQuery.noConflict(true);
+EOD;
+
+		wp_add_inline_script('mailchimp-js',$script);
+    
+    
+    
     wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],time(),true);
 }
 add_action('wp_enqueue_scripts','jurist_assets');
@@ -191,8 +223,6 @@ function jurist_about_page_template_banner() {
     }
 }
 add_action( "wp_head", "jurist_about_page_template_banner", 11 );
-
-
 function saneem_search_form( $form ) {
     $homedir      = home_url( "/" );
     $label        = __( "Search for:", "saneem" );
@@ -208,9 +238,16 @@ function saneem_search_form( $form ) {
     <input type="submit" class="btn btn-primary btn-sm" value="{$button_label}">
 </form>
 FORM;
-
     return $newform;
 }
-
-
 add_filter( "get_search_form", "saneem_search_form" );
+function saneem_highlight_search_results( $text ) {
+    if ( is_search() ) {
+        $pattern = '/(' . join( '|', explode( ' ', get_search_query() ) ) . ')/i';
+        $text    = preg_replace( $pattern, '<span class="search-highlight">\0</span>', $text );
+    }
+    return $text;
+}
+add_filter( 'the_content', 'saneem_highlight_search_results' );
+add_filter( 'the_excerpt', 'saneem_highlight_search_results' );
+add_filter( 'the_title', 'saneem_highlight_search_results' );

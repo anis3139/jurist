@@ -29,7 +29,7 @@
                 <?php
 		             wp_nav_menu( array(
                             'theme_location'  => 'primary',
-                            'depth'           => 3,
+                            'depth'           => 2,
                             'menu_class'      => 'navbar-nav ml-auto text-center',
                             'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                             'walker'         => new WP_Bootstrap_Navwalker(),

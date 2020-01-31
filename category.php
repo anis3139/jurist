@@ -6,6 +6,7 @@
 
  <section class="ftco-section bg-light">
          <div class="container">
+         <?php the_archive_title('<h2 class="jcategory">','</h2>');?>
         <div class="row">
             <?php 
             while(have_posts()):

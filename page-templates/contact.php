@@ -24,16 +24,16 @@ $jurist_section_description= $jurist_section->post_content;
               </div>
               <div class="w-100"></div>
               <div class="col-md-3">
-                  <p><span><?php _e('Address:','jurist');?></span> <?php echo esc_html($jurist_page_meta[jurist_contact_address]);?></p>
+                  <p><span><?php _e('Address:','jurist');?></span> <?php echo esc_html($jurist_page_meta['jurist_contact_address']);?></p>
               </div>
               <div class="col-md-3">
-                  <p><span>Phone:</span> <a href="tel:<?php echo esc_attr($jurist_page_meta[jurist_contact_phone]);?>"><?php echo esc_html($jurist_page_meta[jurist_contact_phone]);?></a></p>
+                  <p><span>Phone:</span> <a href="tel:<?php echo esc_attr($jurist_page_meta['jurist_contact_phone']);?>"><?php echo esc_html($jurist_page_meta['jurist_contact_phone']);?></a></p>
               </div>
               <div class="col-md-3">
-                  <p><span>Email:</span> <a href="mailto:<?php echo esc_attr($jurist_page_meta[jurist_contact_email]);?>"><?php echo esc_html($jurist_page_meta[jurist_contact_email]);?></a></p>
+                  <p><span>Email:</span> <a href="mailto:<?php echo esc_attr($jurist_page_meta['jurist_contact_email']);?>"><?php echo esc_html($jurist_page_meta['jurist_contact_email']);?></a></p>
               </div>
               <div class="col-md-3">
-                  <p><span>Website</span> <a href="<?php echo esc_url($jurist_page_meta[jurist_contact_website]);?>"><?php echo esc_html($jurist_page_meta[jurist_contact_website]);?></a></p>
+                  <p><span>Website</span> <a href="<?php echo esc_url($jurist_page_meta['jurist_contact_website']);?>"><?php echo esc_html($jurist_page_meta['jurist_contact_website']);?></a></p>
               </div>
           </div>
           <div class="row block-9">
