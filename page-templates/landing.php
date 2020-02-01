@@ -40,7 +40,7 @@ get_template_part("page-templates/common/about-common");
 
 <section class="ftco-section">
     <div class="container">
-        <div class="row justify-content-center mb-5">
+        <div class="row justify-content-center">
             <div class="col-md-10 text-center heading-section ftco-animate">
                 <span class="subheading"><?php _e('Explore Case Studies','jurist');?></span>
                 <h2 class="mb-4"><?php _e('1000+ Completed Cases Successfully','jurist');?></h2>
