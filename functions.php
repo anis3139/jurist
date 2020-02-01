@@ -7,10 +7,11 @@ require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/mj-wp-breadcrumb/mj-wp-breadcrumb.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-landing.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-about.php" ) );
-require_once( get_theme_file_path( "/inc/metaboxes/page-prectice.php" ) );
-require_once( get_theme_file_path( "/inc/metaboxes/page-case.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-attorneys.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-contact.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-practice-.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-testimonials.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page-booking.php" ) );
 define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
 define( 'CS_ACTIVE_METABOX', true ); // default true
 define( 'CS_ACTIVE_TAXONOMY', false ); // default true
@@ -66,7 +67,7 @@ function jurist_theme_setup() {
 }
 add_action( 'after_setup_theme', 'jurist_theme_setup' );
 function jurist_add_editor_styles() {
-	add_editor_style( 'custom-editor-style.css' );
+	add_editor_style( '/lib/custom-editor-style.css' );
 }
 add_action( 'admin_init', 'jurist_add_editor_styles' );
 function jurist_content_width() {
@@ -98,9 +99,9 @@ function jurist_assets(){
     wp_enqueue_script('aos-js',get_theme_file_uri('/assets/js/aos.js'),['jquery'],time(),true); 
     wp_enqueue_script('animateNumber-js',get_theme_file_uri('/assets/js/jquery.animateNumber.min.js'),['jquery'],time(),true);
     wp_enqueue_script('scrollax-js',get_theme_file_uri('/assets/js/scrollax.min.js'),['jquery'],time(),true);   
-    wp_enqueue_script('google-map-js',get_theme_file_uri('/assets/js/google-map.js'),['jquery'],time(),true);  
-    wp_enqueue_script('googleapis-js',get_theme_file_uri('//maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'),['jquery'],time(),true);    
-    		wp_enqueue_style('mailchimp-css','//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
+    wp_enqueue_script('google-map-js',get_theme_file_uri('/assets/js/google-map.js'),['jquery'],time(),true);   
+    wp_enqueue_script('googlemap-js',get_theme_file_uri('//maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'),['jquery'],time(),true);    
+    wp_enqueue_style('mailchimp-css','//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
 		$style = <<<EOD
 #mc_embed_signup {
     background: #fff;
@@ -251,3 +252,18 @@ function saneem_highlight_search_results( $text ) {
 add_filter( 'the_content', 'saneem_highlight_search_results' );
 add_filter( 'the_excerpt', 'saneem_highlight_search_results' );
 add_filter( 'the_title', 'saneem_highlight_search_results' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

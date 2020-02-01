@@ -42,16 +42,7 @@ function jurist_contact_metabox($metaboxes){
                         'title'   => __( 'Contact Website', 'jurist' ),
                         'type'    => 'text',
                         
-                    ),                      
-                    array(
-                        'id'    => 'jurist_contact_form',
-                        'title'   => __( 'Contact Form', 'jurist' ),
-                        'type'    => 'textarea',
-                        'default'=>__('Please Drop Here Your Contact Form Shortcode','jurist'),
-                        
-                    ),
-                  
-                
+                    ),                        
              ),
             ),
         ), 

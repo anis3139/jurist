@@ -1,24 +1,22 @@
-<?php 
-
-$jurist_page_meta= get_post_meta(get_the_ID(),'jurist_about_page_sections',true);
-
-$contact_form_image= wp_get_attachment_image_src($jurist_page_meta['contact_image'],'full');
+<?php
+    $jurist_booking_posts = new WP_Query( array(
+        'post_type' => 'booking',
+        'posts_per_page'      => 1,  
+    ) );
+ if( $jurist_booking_posts->have_posts() ):
+    while ( $jurist_booking_posts->have_posts() ):
+        $jurist_booking_posts->the_post();
+$jurist_page_meta= get_post_meta(get_the_ID(),'jurist_booking',true);
 ?>
-<section class="ftco-consultation ftco-section img mt-1" style="background-image: url(<?php echo esc_url($contact_form_image[0]);?>);">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row d-md-flex justify-content-end">
-            <div class="col-md-6 half p-3 p-md-5 ftco-animate heading-section">
-                <span class="subheading sheading"><?php _e('Booking an Appointment','jurist');?></span>
-                <h2 class="mb-4"><?php _e('Free Consultation','jurist');?></h2>
-
-                <?php 
-                       if($jurist_page_meta['jurist_contact_form_shortcode']){
-                       echo do_shortcode($jurist_page_meta['jurist_contact_form_shortcode']);
-                            };
+<div class="col-lg-6 order-md-last d-flex justify-content-center">
+                        <?php 
+                       if($jurist_page_meta['booking_shortcode']){
+                       echo do_shortcode($jurist_page_meta['booking_shortcode']);
+                        };
                         ?>
-
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+<?php 
+endwhile;
+wp_reset_query();
+endif;
+?>

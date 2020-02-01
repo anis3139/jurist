@@ -1,27 +1,34 @@
-<?php 
-$jurist_page_meta= get_post_meta(get_the_ID(),'case_study_page_sections',true);
-?>
 <section class="ftco-section">
-   <?php 
-    $jurist_portfolios=$jurist_page_meta['case_study_sections'];
-    if($jurist_portfolios): 
-    ?>
+
     <div class="container">
         <div class="row">
-           <?php 
-            foreach($jurist_portfolios as $jurist_portfolio):
-            $jurist_portfolio_image= wp_get_attachment_image_src($jurist_portfolio['Portfolio_image'],'large');
-            ?>
+            <?php
+    $jurist_case_studies_posts = new WP_Query( array(
+        'post_type' => 'case_studies',
+        'posts_per_page'      => -1,  
+    ) );
+            
+    if( $jurist_case_studies_posts->have_posts() ):
+            
+    while ( $jurist_case_studies_posts->have_posts() ):
+        $jurist_case_studies_posts->the_post();
+        $jurist_case_study_image=get_the_post_thumbnail_url(null, "large");
+    ?>
+
+
             <div class="col-md-4 case-study ftco-animate">
-                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url(<?php echo esc_url($jurist_portfolio_image[0]); ?>);">
+                <div class="case img d-flex align-items-center justify-content-center" style="background-image: url( <?php echo esc_url($jurist_case_study_image);?>);">
                     <div class="text text-center">
-                        <h3><a href="<?php the_permalink();?>"><?php echo esc_html($jurist_portfolio['portfolio_title']); ?></a></h3>
-                        <span><?php echo esc_html($jurist_portfolio['portfolio_Fields']); ?></span>
+                        <h3><?php the_title();?></h3>
+                        <span> <?php echo esc_html(wp_trim_words(get_the_excerpt(),4));?></span>
                     </div>
                 </div>
             </div>
-            <?php endforeach;?>
+            <?php 
+            endwhile;
+            wp_reset_query();
+            endif;
+            ?>
         </div>
     </div>
-    <?php endif;?>
 </section>

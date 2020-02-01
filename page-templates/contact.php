@@ -36,8 +36,9 @@ $jurist_section_description= $jurist_section->post_content;
                   <p><span>Website</span> <a href="<?php echo esc_url($jurist_page_meta['jurist_contact_website']);?>"><?php echo esc_html($jurist_page_meta['jurist_contact_website']);?></a></p>
               </div>
           </div>
-          <div class="row block-9">
+          <div class="row block-9 justify-content-between">
               <div class="col-lg-6 order-md-last d-flex overflow-hidden">
+                 
                   <?php 
                     get_template_part("/page-templates/common/contact-common");
                     ?>
