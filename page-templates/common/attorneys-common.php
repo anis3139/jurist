@@ -1,4 +1,10 @@
- <?php
+
+    
+    
+<section class="ftco-section">
+    <div class="container">
+        <div class="row no-gutters">
+           <?php
     $jurist_attorneys_posts = new WP_Query( array(
         'post_type' => 'attorneys',
         'posts_per_page'      => -1,  
@@ -11,12 +17,6 @@
 $jurist_testimonials_meta = get_post_meta(get_the_ID(),'jurist_attorneys',true);
     ?>
     
-    
-    
-<section class="ftco-section">
-    <div class="container">
-        <div class="row no-gutters">
-          
             <div class="col-lg-3 col-sm-6">
                 <div class="block-2 ftco-animate">
                     <div class="flipper">
@@ -45,13 +45,13 @@ $jurist_testimonials_meta = get_post_meta(get_the_ID(),'jurist_attorneys',true);
                     </div>
                 </div>
             </div>
-           
-        </div>
-    </div>
-</section>
-  <?php 
+             <?php 
             endwhile;
             wp_reset_query();
             endif;
             ?>
+
+        </div>
+    </div>
+</section>
 

@@ -15,7 +15,7 @@ $jurist_section_description= $jurist_section->post_content;
 <?php get_template_part("/page-templates/common/attorneys-common");
 ?>
 <?php 
-    get_template_part("/page-templates/common/contact-common");
+    get_template_part("/page-templates/common/booking-common");
 ?>
 <?php 
     get_template_part("/page-templates/common/email");
