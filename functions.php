@@ -1,8 +1,8 @@
 <?php 
 require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
 require_once( get_theme_file_path("/inc/tgm.php") );
+require_once( get_theme_file_path("/inc/customizer.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
-require_once( get_theme_file_path( "/widgets/social-icons-widget.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/mj-wp-breadcrumb/mj-wp-breadcrumb.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-about.php" ) );
@@ -15,7 +15,7 @@ define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
 define( 'CS_ACTIVE_METABOX', true ); // default true
 define( 'CS_ACTIVE_TAXONOMY', false ); // default true
 define( 'CS_ACTIVE_SHORTCODE', false ); // default true
-define( 'CS_ACTIVE_CUSTOMIZE', false ); // default true
+define( 'CS_ACTIVE_CUSTOMIZE', true ); // default true
 if ( ! file_exists( get_template_directory() . '/assets/nav-walker/class-wp-bootstrap-navwalker.php' ) ) {
     return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
 } else {
@@ -95,11 +95,11 @@ function jurist_assets(){
     wp_enqueue_script('waypoints-js',get_theme_file_uri('/assets/js/jquery.waypoints.min.js'),['jquery'],VERSION,true);
     wp_enqueue_script('stellar-js',get_theme_file_uri('/assets/js/jquery.stellar.min.js'),['jquery'],VERSION,true);
     wp_enqueue_script('magnific-js',get_theme_file_uri('/assets/js/jquery.magnific-popup.min.js'),['jquery'],VERSION,true);
-    wp_enqueue_script('aos-js',get_theme_file_uri('/assets/js/aos.js'),['jquery'],time(),true); 
-    wp_enqueue_script('animateNumber-js',get_theme_file_uri('/assets/js/jquery.animateNumber.min.js'),['jquery'],time(),true);
-    wp_enqueue_script('scrollax-js',get_theme_file_uri('/assets/js/scrollax.min.js'),['jquery'],time(),true);   
-    wp_enqueue_script('google-map-js',get_theme_file_uri('/assets/js/google-map.js'),['jquery'],time(),true);   
-    wp_enqueue_script('googlemap-js',get_theme_file_uri('//maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'),['jquery'],time(),true);    
+    wp_enqueue_script('aos-js',get_theme_file_uri('/assets/js/aos.js'),['jquery'],VERSION,true); 
+    wp_enqueue_script('animateNumber-js',get_theme_file_uri('/assets/js/jquery.animateNumber.min.js'),['jquery'],VERSION,true);
+    wp_enqueue_script('scrollax-js',get_theme_file_uri('/assets/js/scrollax.min.js'),['jquery'],VERSION,true);   
+    wp_enqueue_script('google-map-js',get_theme_file_uri('/assets/js/google-map.js'),['jquery'],VERSION,true);   
+    wp_enqueue_script('googlemap-js',get_theme_file_uri('//maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false'),['jquery'],VERSION,true);    
     wp_enqueue_style('mailchimp-css','//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
 		$style = <<<EOD
 #mc_embed_signup {
@@ -133,7 +133,7 @@ EOD;
     
     
     
-    wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],time(),true);
+    wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],VERSION,true);
 }
 add_action('wp_enqueue_scripts','jurist_assets');
 function jurist_widgets_init() {
@@ -199,11 +199,21 @@ function jurist_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title mb-5">',
 		'after_title'   => '</h3>',
+	) );   
+    ;register_sidebar( array(
+		'name'          => esc_html__( 'Newsletter', 'jurist' ),
+		'id'            => 'newsletter',
+		'description'   => esc_html__( 'Add Newsletter widgets here.', 'jurist' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'jurist_widgets_init' );
 function jurist_csf_init(){
     CSFramework_metabox::instance(array());
+    CSFramework_Customize::instance(array());
 }
 add_action('init', 'jurist_csf_init');
 function jurist_about_page_template_banner() {

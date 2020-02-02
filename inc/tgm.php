@@ -66,6 +66,16 @@ function jurist_register_required_plugins() {
             'slug'     => 'contact-form-7',
             'required' => false,
         ),
+ array(
+            'name'     => 'Newsletter',
+            'slug'     => 'newsletter',
+            'required' => false,
+        ), 
+        array(
+            'name'     => 'Social Icon',
+            'slug'     => 'ultimate-social-media-icons',
+            'required' => false,
+        ),
 
 		
 
