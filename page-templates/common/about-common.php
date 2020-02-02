@@ -6,7 +6,7 @@
                     $about_image_id =get_theme_mod("jurist_about_image","large");
                     ?>
                 <div id="about-url" class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end" style="background-image:url(<?php echo esc_url($about_image_id);?>);">
-                    <a href="<?php echo get_theme_mod('jurist_about_url',__('https://www.youtube.com/watch?v=MZ552T1vzn8','jurist'));?>" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                    <a href="<?php echo esc_html(get_theme_mod('jurist_about_url',__('https://www.youtube.com/watch?v=MZ552T1vzn8','jurist')));?>" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                         <span class="icon-play"></span>
                     </a>
                 </div>
@@ -15,10 +15,10 @@
                 <div class="row justify-content-start pt-3 pb-3">
                     <div class="col-md-12 heading-section ftco-animate">
                         <span class="subheading" id="about-sub-heading"><?php
-                    echo get_theme_mod('jurist_about_sub_heading',__('Welcome to Jurist','jurist'));
+                    echo esc_html(get_theme_mod('jurist_about_sub_heading',__('Welcome to Jurist','jurist')));
                     ?></span>
                         <h2 class="mb-4" id="about-heading"> <?php
-                    echo get_theme_mod('jurist_about_heading',__('We Always Fight For Your Justice to Win','jurist'));
+                    echo esc_html(get_theme_mod('jurist_about_heading',__('We Always Fight For Your Justice to Win','jurist')));
                     ?></h2>
                         <div id="about-description"><?php
                     echo apply_filters('the_content', get_theme_mod('jurist_about_description',__('Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
@@ -30,7 +30,7 @@ Even the all-powerful Pointing has no control about the blind texts it is an alm
 
 
                         <div class="years d-flex" id="about-experiance">
-                            <h4 class="number mr-2" data-number="<?php echo get_theme_mod('jurist_about_experiance',__('30','jurist'));?>"></h4>
+                            <h4 class="number mr-2" data-number="<?php echo esc_html(get_theme_mod('jurist_about_experiance',__('30','jurist')));?>"></h4>
                             <h4><?php _e('Years of Experienced','jurist')?></h4>
                         </div>
                     </div>

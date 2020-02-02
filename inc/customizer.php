@@ -55,6 +55,7 @@ function jurist_customizer_settings( $wp_jurist ) {
 	) );
     
         
+/*
 
 	$wp_jurist->selective_refresh->add_partial('jurist_about_heading',array(
 		'selector'=>'#about-heading',
@@ -63,6 +64,7 @@ function jurist_customizer_settings( $wp_jurist ) {
 			return get_theme_mod('jurist_about_heading');
 		}
 	));
+*/
 
     
 	$wp_jurist->add_setting( 'jurist_about_description', array(
@@ -183,7 +185,7 @@ function jurist_customizer_settings( $wp_jurist ) {
 	));
     
 
-
+    
     
     
     
@@ -193,7 +195,7 @@ function jurist_customizer_settings( $wp_jurist ) {
   /**
 	 * Front Page Settings
 	 */
-
+    
 	$wp_jurist->add_section( 'jurist_front_page', array(
 		'title'           => __( 'Front Page Settings', 'jurist' ),
 		'priority'        => '40',
@@ -206,8 +208,8 @@ function jurist_customizer_settings( $wp_jurist ) {
 			return is_page_template( 'page-templates/landing.php' );
 		}
 	) );
-    
-    
+
+
     $wp_jurist->add_setting( 'jurist_front_page_sub_heading', array(
 		'default'   => "Product Liabilty & Personal Injury",
 		'transport' => 'postMessage',
@@ -251,7 +253,20 @@ function jurist_customizer_settings( $wp_jurist ) {
 		}
 	));
     
-
+    
+    $wp_jurist->add_setting( 'jurist_pages_control', array(
+		'default'   => 'choice3',
+		'transport' => 'refresh', //postMessage
+	) );
+	 $wp_jurist->add_control( 'jurist_pages_control', array(
+		'label'          => __( 'Available Pages', 'customizer' ),
+		'section'        => 'jurist_front_page',
+		'type'           => 'dropdown-pages',
+		'allow_addition' => true
+	) );
+    
+    
+    
     
     $wp_jurist->add_setting( 'practice_area', array(
 		'default'   => "Practice Areas",
@@ -550,13 +565,10 @@ function jurist_customizer_settings( $wp_jurist ) {
 		}
 	));
     
+
+
     
-    
-    
-    
-    
-    
-    
+  
     
 
     
@@ -674,7 +686,109 @@ function jurist_customizer_settings( $wp_jurist ) {
 	));
        
 
+    
+    /**
+	 * Contact Pages Settings
+	 */
 
+	$wp_jurist->add_section( 'jurist_contact_page', array(
+		'title'           => __( 'Contact Page setting', 'jurist' ),
+		'priority'        => '40',
+		'active_callback' => function () {
+			if(is_page_template('page-templates/contact.php')){
+				return true;
+			}
+			return false;
+
+			return is_page_template( 'page-templates/contact.php' );
+		}
+	) );
+    
+       $wp_jurist->add_setting( 'jurist_address', array(
+		'default'   => "Khilgoan, Dhaka-1219, Bangladesh",
+		'transport' => 'postMessage',
+	) );
+
+	$wp_jurist->add_control( 'jurist_address', array(
+		'label'    => __( 'Address', 'jurist' ),
+		'section'  => 'jurist_contact_page',
+		'type'     => 'text',
+
+	) );
+    
+        
+    $wp_jurist->selective_refresh->add_partial('jurist_address',array(
+		'selector'=>'#jurist-address',
+		'settings'=>'jurist_address',
+		'render_callback'=>function(){
+			return get_theme_mod('jurist_address');
+		}
+	));
+     
+    $wp_jurist->add_setting( 'jurist_phone', array(
+		'default'   => "008801816366535",
+		'transport' => 'postMessage',
+	) );
+
+	$wp_jurist->add_control( 'jurist_phone', array(
+		'label'    => __( 'Phone', 'jurist' ),
+		'section'  => 'jurist_contact_page',
+		'type'     => 'text',
+
+	) );
+    
+        
+    $wp_jurist->selective_refresh->add_partial('jurist_phone',array(
+		'selector'=>'#jurist-phone',
+		'settings'=>'jurist_phone',
+		'render_callback'=>function(){
+			return get_theme_mod('jurist_phone');
+		}
+	));     
+    
+    
+    $wp_jurist->add_setting( 'jurist_email', array(
+		'default'   => "anis904692@gmail.com",
+		'transport' => 'postMessage',
+	) );
+
+	$wp_jurist->add_control( 'jurist_email', array(
+		'label'    => __( 'Email', 'jurist' ),
+		'section'  => 'jurist_contact_page',
+		'type'     => 'text',
+
+	) );
+    
+        
+    $wp_jurist->selective_refresh->add_partial('jurist_email',array(
+		'selector'=>'#jurist-email',
+		'settings'=>'jurist_email',
+		'render_callback'=>function(){
+			return get_theme_mod('jurist_email');
+		}
+	));
+     
+    
+    $wp_jurist->add_setting( 'jurist_website', array(
+		'default'   => "http://www.rainyforest.xyz/",
+		'transport' => 'postMessage',
+	) );
+
+	$wp_jurist->add_control( 'jurist_website', array(
+		'label'    => __( 'Website', 'jurist' ),
+		'section'  => 'jurist_contact_page',
+		'type'     => 'text',
+
+	) );
+    
+        
+    $wp_jurist->selective_refresh->add_partial('jurist_website',array(
+		'selector'=>'#jurist-website',
+		'settings'=>'jurist_website',
+		'render_callback'=>function(){
+			return get_theme_mod('jurist_website');
+		}
+	));
  
 }
 

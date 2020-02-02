@@ -1,0 +1,123 @@
+;(function ($) {
+ /*   alert("Hello Paru");*/
+    
+    wp.customize('jurist_about_heading', function (value) {
+        value.bind(function (newvalue) {
+            $("#about-heading").html(newvalue);
+        });
+    });
+
+    wp.customize('jurist_about_description', function (value) {
+        value.bind(function (newvalue) {
+            $("about-description").html(newvalue);
+        });
+    });
+    wp.customize('jurist_about_sub_heading',function(value){
+        value.bind(function(newvalue){
+            $("#about-sub-heading").html(newvalue);
+        });
+    });
+    wp.customize('jurist_about_url',function(value){
+        value.bind(function(newvalue){
+            $("#about-url").html(newvalue);
+        });
+    });
+    wp.customize('jurist_front_page_sub_heading',function(value){
+        value.bind(function(newvalue){
+            $("#front-sub-heading").html(newvalue);
+        });
+    });
+    wp.customize('practice_area',function(value){
+        value.bind(function(newvalue){
+            $("#practice-area").html(newvalue);
+        });
+    });
+    wp.customize('practice_areas',function(value){
+        value.bind(function(newvalue){
+            $("#practice-areas").html(newvalue);
+        });
+    });
+      wp.customize('our_attorneys',function(value){
+        value.bind(function(newvalue){
+            $("#our-attorneys").html(newvalue);
+        });
+    });
+    wp.customize('our_attorney',function(value){
+        value.bind(function(newvalue){
+            $("#our-attorney").html(newvalue);
+        });
+    });
+    wp.customize('booking1',function(value){
+        value.bind(function(newvalue){
+            $("#booking1").html(newvalue);
+        });
+    });
+    wp.customize('booking2',function(value){
+        value.bind(function(newvalue){
+            $("#booking2").html(newvalue);
+        });
+    });
+      wp.customize('c_subheading',function(value){
+        value.bind(function(newvalue){
+            $("#c-subheading").html(newvalue);
+        });
+    });
+    wp.customize('c_heading',function(value){
+        value.bind(function(newvalue){
+            $("#c-heading").html(newvalue);
+        });
+    });
+    wp.customize('t_subheading',function(value){
+        value.bind(function(newvalue){
+            $("#t-subheading").html(newvalue);
+        });
+    });
+          wp.customize('t_heading',function(value){
+        value.bind(function(newvalue){
+            $("##t-heading").html(newvalue);
+        });
+    });
+    wp.customize('o_blog',function(value){
+        value.bind(function(newvalue){
+            $("#o-blog").html(newvalue);
+        });
+    });
+    wp.customize('or_blog',function(value){
+        value.bind(function(newvalue){
+            $("#or-blog").html(newvalue);
+        });
+    });
+    wp.customize('je_mail',function(value){
+        value.bind(function(newvalue){
+            $("#je-mail").html(newvalue);
+        });
+    });          
+    wp.customize('je_mail',function(value){
+        value.bind(function(newvalue){
+            $("#je-mail").html(newvalue);
+        });
+    });          
+    wp.customize('jurist_address',function(value){
+        value.bind(function(newvalue){
+            $("#jurist-address").html(newvalue);
+        });
+    });    
+    wp.customize('jurist_phone',function(value){
+        value.bind(function(newvalue){
+            $("#jurist-phone").html(newvalue);
+        });
+    });    
+    wp.customize('jurist_email',function(value){
+        value.bind(function(newvalue){
+            $("#jurist-email").html(newvalue);
+        });
+    });    
+    wp.customize('jurist_website',function(value){
+        value.bind(function(newvalue){
+            $("#jurist-website").html(newvalue);
+        });
+    });
+    
+    
+    
+})(jQuery);

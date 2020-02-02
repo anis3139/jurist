@@ -2,11 +2,11 @@
 require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
 require_once( get_theme_file_path("/inc/tgm.php") );
 require_once( get_theme_file_path("/inc/customizer.php") );
+require_once( get_theme_file_path("/inc/social-customizer.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/mj-wp-breadcrumb/mj-wp-breadcrumb.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-attorneys.php" ) );
-require_once( get_theme_file_path( "/inc/metaboxes/page-contact.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-practice-.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-testimonials.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-booking.php" ) );
@@ -108,7 +108,6 @@ function jurist_assets(){
 }
 EOD;
 		wp_add_inline_style('mailchimp-css',$style);
-
 		wp_enqueue_script('mailchimp-js','//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js',array('jquery'),'1.0',true);
 		$script = <<<EOD
 (function ($) {
@@ -127,14 +126,22 @@ EOD;
 }(jQuery));
 var \$mcj = jQuery.noConflict(true);
 EOD;
-
-		wp_add_inline_script('mailchimp-js',$script);
-    
-    
-    
+	wp_add_inline_script('mailchimp-js',$script);
     wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],VERSION,true);
 }
 add_action('wp_enqueue_scripts','jurist_assets');
+
+function jurist_customizer_assets() {
+	wp_enqueue_script( "cust-customizer-js", get_theme_file_uri( "/assets/js/customizer.js" ), array(
+		'jquery',
+		'customize-preview'
+	), time(), true );
+}
+
+add_action( "customize_preview_init", 'jurist_customizer_assets' );
+
+
+
 function jurist_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Single page Sidebar', 'jurist' ),
@@ -225,7 +232,6 @@ function jurist_about_page_template_banner() {
         ?>);
         background-size: cover;
     }
-
 </style>
 <?php
         }
@@ -260,18 +266,3 @@ function saneem_highlight_search_results( $text ) {
 add_filter( 'the_content', 'saneem_highlight_search_results' );
 add_filter( 'the_excerpt', 'saneem_highlight_search_results' );
 add_filter( 'the_title', 'saneem_highlight_search_results' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
