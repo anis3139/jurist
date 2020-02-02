@@ -1,6 +1,6 @@
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-5 jurist-newsletter">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <?php 
@@ -8,7 +8,9 @@
                         dynamic_sidebar( "footer-sidebar-1" );
                     }
                     ?>
-                    <?php get_template_part("/page-templates/common/social-icon");?>
+                    
+            <?php get_template_part("/page-templates/common/social-icon");?>
+        
                 </div>
             </div>
             <div class="col-md">
@@ -45,6 +47,7 @@
                 </div>
             </div>
         </div>
+       
         <div class="row">
             <div class="col-md-12 row text-center">
                 <div class="col-md-8">
@@ -60,7 +63,7 @@
 
 
 
-<!-- loader -->
+
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>

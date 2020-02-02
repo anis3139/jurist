@@ -2,7 +2,6 @@
 require_once( get_theme_file_path("/lib/tgm-plugin/class-tgm-plugin-activation.php") );
 require_once( get_theme_file_path("/inc/tgm.php") );
 require_once( get_theme_file_path("/inc/customizer.php") );
-require_once( get_theme_file_path("/inc/social-customizer.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/mj-wp-breadcrumb/mj-wp-breadcrumb.php" ) );

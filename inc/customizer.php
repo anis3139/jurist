@@ -55,7 +55,6 @@ function jurist_customizer_settings( $wp_jurist ) {
 	) );
     
         
-/*
 
 	$wp_jurist->selective_refresh->add_partial('jurist_about_heading',array(
 		'selector'=>'#about-heading',
@@ -64,7 +63,6 @@ function jurist_customizer_settings( $wp_jurist ) {
 			return get_theme_mod('jurist_about_heading');
 		}
 	));
-*/
 
     
 	$wp_jurist->add_setting( 'jurist_about_description', array(

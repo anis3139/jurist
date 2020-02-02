@@ -44,8 +44,8 @@
                         <?php echo get_avatar( get_the_author_meta( "ID"));?>
                     </div>
                     <div class="desc">
-                        <h3><?php echo get_the_author_meta( "display_name" ); ?></h3>
-                        <p><?php echo get_the_author_meta( "description" ); ?></p>
+                        <h3><?php echo esc_html(get_the_author_meta( "display_name" )); ?></h3>
+                        <p><?php echo esc_html(get_the_author_meta( "description" )); ?></p>
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@
 
                 </div>
 
-            </div> <!-- .col-md-8 -->
+            </div> 
             <?php endwhile;?>
             <div class="col-lg-4 sidebar ftco-animate">
                <div class="sidebar-box">
@@ -121,7 +121,7 @@
 
         </div>
     </div>
-</section> <!-- .section -->
+</section> 
 
 
 

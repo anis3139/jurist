@@ -1,7 +1,7 @@
  <?php get_header(); ?>
 
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('<?php echo esc_attr(get_template_directory_uri());?>/assets/images/search1.jpeg');" data-stellar-background-ratio="0.5">
     <div class="overlay">
         
     </div>

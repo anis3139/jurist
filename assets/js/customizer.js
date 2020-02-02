@@ -1,9 +1,8 @@
 ;(function ($) {
- /*   alert("Hello Paru");*/
-    
+
     wp.customize('jurist_about_heading', function (value) {
         value.bind(function (newvalue) {
-            $("#about-heading").html(newvalue);
+            $("#about-heading-js").html(newvalue);
         });
     });
 
