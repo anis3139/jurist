@@ -13,9 +13,9 @@ get_template_part("page-templates/common/about-common");
 <section class="ftco-section">
     <div class="container">
         <div class="row no-gutters justify-content-center">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-                <span class="subheading"><?php _e('Practice Areas','jurist');?></span>
-                <h2 class="mb-4"><?php _e('Practice Areas','jurist');?></h2>
+            <div class="col-md-7 text-center heading-section ftco-animate" >
+                <span class="subheading" id="practice-area"><?php echo esc_html(get_theme_mod('practice_area',__('Practice Areas','jurist')));?></span>
+                <h2 class="mb-4" id="practice-areas"><?php echo(get_theme_mod('practice_areas',__('Practice Areas','jurist')));?></h2>
             </div>
         </div>
         <div class="row no-gutters d-flex justify-content-center">
@@ -28,8 +28,8 @@ get_template_part("page-templates/common/about-common");
 <div class="attorneys">
     <div class="row justify-content-center">
         <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading"><?php _e('Our Attorney','jurist');?></span>
-            <h2 class="mb-4"><?php _e('Our Legal Attorneys','jurist');?></h2>
+            <span class="subheading" id="our-attorneys"><?php echo esc_html(get_theme_mod('our_attorneys',__('Our Attorneys','jurist')));?></span>
+            <h2 class="mb-4" id="our-attorney"><?php echo esc_html(get_theme_mod('our__attorney',__('Our Legal Attorneys','jurist')));?></h2>
         </div>
     </div>
     <?php get_template_part("/page-templates/common/attorneys-common");?>
@@ -42,11 +42,12 @@ get_template_part("page-templates/common/about-common");
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 text-center heading-section ftco-animate">
-                <span class="subheading"><?php _e('Explore Case Studies','jurist');?></span>
-                <h2 class="mb-4"><?php _e('1000+ Completed Cases Successfully','jurist');?></h2>
+                <span class="subheading" id="c-subheading"><?php echo esc_html(get_theme_mod('c_subheading',__('Explore Case Studies','jurist')));?></span>
+                <h2 class="mb-4" id="c-heading"><?php echo esc_html(get_theme_mod('c_heading',__('1000+ Completed Cases Successfully','jurist')));?></h2>
             </div>
         </div>
         <?php get_template_part("/page-templates/common/case-common");?>
+     
     </div>
 </section>
 <?php get_template_part("/page-templates/common/testimonials-common");?>

@@ -3,7 +3,7 @@
         <div class="container py-4">
             <div class="row d-flex justify-content-between">
                 <div class="col-md-7 ftco-animate d-flex align-items-center">
-                    <h2 class="mb-0" style="color:white; font-size: 28px;"><?php _e('Subcribe to our Newsletter','jurist');?></h2>
+                    <h2 class="mb-0" style="color:white; font-size: 28px;" id="je-mail"><?php echo esc_html(get_theme_mod('je_mail',__('Subcribe to our Newsletter','jurist')));?></h2>
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
                     <form action="#" class="subscribe-form">

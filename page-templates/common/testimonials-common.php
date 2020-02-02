@@ -2,8 +2,8 @@
        <div class="container">
            <div class="row justify-content-center mb-5">
                <div class="col-md-7 text-center heading-section ftco-animate">
-                   <span class="subheading"><?php _e('Testimonial','jurist');?></span>
-                   <h2 class="mb-4"><?php _e('Happy Clients','jurist');?></h2>
+                   <span class="subheading" id="t-subheading"><?php echo(get_theme_mod('t_subheading',__('Testimonial','jurist')));?></span>
+                   <h2 class="mb-4" id="t-heading"><?php echo(get_theme_mod('t_heading',__('Happy Clients','jurist')));?></h2>
                </div>
            </div>
            <div class="row ftco-animate">

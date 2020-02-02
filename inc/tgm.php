@@ -71,14 +71,6 @@ function jurist_register_required_plugins() {
             'slug'     => 'newsletter',
             'required' => false,
         ), 
-        array(
-            'name'     => 'Social Icon',
-            'slug'     => 'ultimate-social-media-icons',
-            'required' => false,
-        ),
-
-		
-
 	);
 
 	/*

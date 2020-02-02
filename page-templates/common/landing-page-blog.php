@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Our Blog</span>
-                <h2>Recent Blog</h2>
+                <span class="subheading" id="o-blog"><?php echo(get_theme_mod('o_blog',__('Our Blog','jurist')));?></span>
+                <h2 id="or-blog"><?php echo(get_theme_mod('or_blog"',__('Recent Blog','jurist')));?></h2>
             </div>
         </div>
 

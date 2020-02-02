@@ -38,41 +38,7 @@ function jurist_register_my_cpts_section() {
 
 	register_post_type( "practice", $args );
 
-	$labels = [
-		"name" => __( "About us", "jurist" ),
-		"singular_name" => __( "About us", "jurist" ),
-	];
-
-	$args = [
-		"label" => __( "About us", "jurist" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => false,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"delete_with_user" => false,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "about-us", "with_front" => true ],
-		"query_var" => true,
-		"menu_position" => 20,
-		"menu_icon" => "dashicons-visibility",
-		"supports" => [ "title", "editor","thumbnail"],
-	];
-
-	register_post_type( "about-us", $args );
-    
-    
-    
+	
  
     
 	$labels = [
@@ -203,7 +169,7 @@ function jurist_register_my_cpts_section() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "gallery", "with_front" => true ],
 		"query_var" => true,
-		"menu_position" => 15,
+		"menu_position" => 20,
 		"menu_icon" => "dashicons-format-gallery",
 		"supports" => [ "thumbnail","title"],
 	];
@@ -239,7 +205,7 @@ function jurist_register_my_cpts_section() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "booking", "with_front" => true ],
 		"query_var" => true,
-		"menu_position" => 15,
+		"menu_position" => 20,
 		"menu_icon" => "dashicons-email-alt",
 		"supports" => ["title"],
 	];
@@ -273,7 +239,7 @@ function jurist_register_my_cpts_section() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "featured", "with_front" => true ],
 		"query_var" => true,
-		"menu_position" => 15,
+		"menu_position" => 20,
 		"menu_icon" => "dashicons-visibility",
 		"supports" => [ "title", "editor","thumbnail"],
 	];

@@ -5,7 +5,6 @@ require_once( get_theme_file_path("/inc/customizer.php") );
 require_once( get_theme_file_path( "/lib/companion/companion-plugin.php" ) );
 require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
 require_once( get_theme_file_path( "/inc/mj-wp-breadcrumb/mj-wp-breadcrumb.php" ) );
-require_once( get_theme_file_path( "/inc/metaboxes/page-about.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-attorneys.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-contact.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/page-practice-.php" ) );
